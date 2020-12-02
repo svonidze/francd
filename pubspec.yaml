@@ -1,0 +1,11 @@
+name: franc
+description: Dart port of franc
+version: 0.0.1
+author: @IgoKom, @svonidze
+homepage: https://github.com/svonidze/francd
+
+environment:
+  sdk: "^2.0.0"
+
+dev_dependencies:
+  test: ^1.15.7
