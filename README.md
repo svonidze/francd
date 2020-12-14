@@ -15,11 +15,11 @@ Dart 2.0.0 or higher.
 ## Usage
 #### import
 ```
-import 'package:franc/franc.dart';
+import 'package:francd/francd.dart';
 ```
 #### make object
 ```
-final franc = Franc();
+final francd = Francd();
 ```
 #### detect languages:
 ```

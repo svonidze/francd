@@ -1,4 +1,4 @@
-import 'package:franc/franc.dart';
+import 'package:franc/francd.dart';
 import 'package:test/test.dart';
 
 const shortInputs = {

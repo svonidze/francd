@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'package:franc/src/expressions.dart';
-import 'package:franc/src/trigram_utils.dart' as trigram_utils;
-import 'package:franc/src/trigrams.dart';
+import 'expressions.dart';
+import 'trigram_utils.dart' as trigram_utils;
+import 'trigrams.dart';
 
 /// Detects language of text
 
-class Franc {
+class Francd {
   ///Maximum sample length.
   int maxLength;
 
@@ -20,7 +20,7 @@ class Franc {
 
   Map<String, Map<String, Map<String, int>>> _languageModelData = {};
 
-  Franc({this.maxLength = 2048, this.minLength = 10, this.maxDifference = 300})
+  Francd({this.maxLength = 2048, this.minLength = 10, this.maxDifference = 300})
       : assert(maxLength != null),
         assert(minLength != null),
         assert(maxDifference != null) {
