@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "232d8073_94d2c2e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T12:15:36Z",
+      "side": 1,
+      "message": "линтер мы добавили к шлангу, как это связано с франком?",
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "182c6900_31406633",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T12:15:36Z",
+      "side": 1,
+      "message": "я не понял смысл комита",
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e8be2d2_5e2d070a",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T12:15:36Z",
+      "side": 1,
+      "message": "по всей видимости это основной смысл фикса, все остальное рефакторинг. это так?",
+      "range": {
+        "startLine": 62,
+        "startChar": 33,
+        "endLine": 62,
+        "endChar": 45
+      },
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
