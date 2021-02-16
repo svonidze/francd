@@ -56,6 +56,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7cb7c36e_64a462d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1018695
+      },
+      "writtenOn": "2021-02-16T18:47:16Z",
+      "side": 1,
+      "message": "ага, я не прописал exclude для подмодулей (не подумал), но раз Игорь уже исправил, то, наверное, и не надо уже.",
+      "parentUuid": "0255d9b1_74d9508d",
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "182c6900_31406633",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
