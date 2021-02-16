@@ -38,6 +38,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "0255d9b1_74d9508d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T15:31:24Z",
+      "side": 1,
+      "message": "ok, makes sense.",
+      "parentUuid": "73ee06f7_0b858c82",
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "182c6900_31406633",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -100,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dd8cf15_b0c83415",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T15:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8426c7f8_3403b0ce",
+      "range": {
+        "startLine": 62,
+        "startChar": 33,
+        "endLine": 62,
+        "endChar": 45
+      },
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcedf75f_8d0fb60f",
@@ -113,6 +155,30 @@
       "writtenOn": "2021-02-16T12:59:56Z",
       "side": 1,
       "message": "а вот этот каст стал просить явно (выделяет красным), ещё несколько пропущенных final, комментарии (это уже жёлтым)",
+      "range": {
+        "startLine": 63,
+        "startChar": 14,
+        "endLine": 63,
+        "endChar": 33
+      },
+      "revId": "47263eaae185e17d8a31229586347d15403dd99b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "160ab235_214a33b3",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-02-16T15:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fcedf75f_8d0fb60f",
       "range": {
         "startLine": 63,
         "startChar": 14,
