@@ -14,22 +14,22 @@ class Franc {
   ///Minimum sample length.
   int minLength;
 
-  /** The maximum distance to add when a given trigram does
-   * not exist in a trigram dictionary. */
+  /// The maximum distance to add when a given trigram does
+  /// not exist in a trigram dictionary.
   int maxDifference;
 
-  Map<String, Map<String, Map<String, int>>> _languageModelData = {};
+  final Map<String, Map<String, Map<String, int>>> _languageModelData = {};
 
   Franc({this.maxLength = 2048, this.minLength = 10, this.maxDifference = 300})
       : assert(maxLength != null),
         assert(minLength != null),
         assert(maxDifference != null) {
     //Construct trigram dictionaries
-    for (String script in trigramsByLanguage.keys) {
-      Map<String, String> languages = trigramsByLanguage[script];
+    for (final String script in trigramsByLanguage.keys) {
+      final Map<String, String> languages = trigramsByLanguage[script];
       _languageModelData[script] = {};
-      for (String languageCode in languages.keys) {
-        List<String> model = languages[languageCode].split('|');
+      for (final String languageCode in languages.keys) {
+        final List<String> model = languages[languageCode].split('|');
         int weight = model.length;
         final Map<String, int> trigrams = {};
         while (weight-- != 0) {
@@ -40,56 +40,46 @@ class Franc {
     }
   }
 
-  /** Get a list of probable languages the given value is
-   * written in.
-   *
-   * @param {string} value - The value to test.
-   * @param {Object} options - Configuration.
-   * @return {Array.<Array.<string, number>>} An array
-   *   containing language--distance tuples.
-   */
+  /// Get a list of probable languages the given [text] is written in.
+  /// Return an array containing language--distance map.
+
   Future<Map<String, double>> detectLanguages(String text) async {
     if (text.isEmpty || text.length < minLength) {
       return {"und": 1.0}; //und()
     }
+    String inputText = text;
     if (text.length > maxLength) {
-      text = text.substring(0, maxLength);
-      print("Input text was truncated to maxLength");
+      inputText = text.substring(0, maxLength);
     }
 
     //Get the script which characters occur the most in `value`.
-    final List<Object> script = await _getTopScript(text, regExpByScript);
+    final List<Object> script = _getTopScript(inputText, regExpByScript);
 
     // One languages exists for the most-used script.
-    if (!(_languageModelData.containsKey(script[0]))) {
+    if (!_languageModelData.containsKey(script[0])) {
       //If no matches occurred, such as a digit only string,
       //or because the language is ignored, exit with `und`.
-      if (script[1] == 0) return {}; //und()
-      return {script[0]: 1.0};
+      if (script[1] == 0) return {"und": 1.0}; //und()
+      return {script[0] as String: 1.0};
     }
 
     // Get all distances for a given script, and normalize the distance values.
     return _normalize(
-      text,
+      inputText,
       _getDistances(
-        trigram_utils.getCleanTrigramsAsDictionary(text),
+        trigram_utils.getCleanTrigramsAsDictionary(inputText),
         _languageModelData[script[0]],
       ),
     );
   }
 
-  /** From `scripts`, get the most occurring expression for
-   * `value`.
-   *
-   * @param {string} value - Value to check.
-   * @param {Object.<RegExp>} scripts - Top-Scripts.
-   * @return {Array} Top script and its
-   *   occurrence percentage.
-   */
+  /// From [scripts], get the most occurring expression for [value].
+  /// Returns top script and its occurrence percentage.
+
   List<Object> _getTopScript(String value, Map<String, String> scripts) {
     double topCount = -1;
     String topScript;
-    for (String script in scripts.keys) {
+    for (final String script in scripts.keys) {
       final double count = _getOccurrence(value, scripts[script]);
       if (count > topCount) {
         topCount = count;
@@ -99,71 +89,45 @@ class Franc {
     return [topScript, topCount];
   }
 
-  /** Get the occurrence ratio of `expression` for `value`.
-   *
-   * @param {string} value - Value to check.
-   * @param {RegExp} expression - Code-point expression.
-   * @return {number} Float between 0 and 1.
-   */
+  /// Get the occurrence ratio of [expression] for [value].
+  /// Returns double between 0 and 1.
+
   double _getOccurrence(String value, String expression) {
-    final int matchCount = RegExp("$expression").allMatches(value).length;
+    final int matchCount = RegExp(expression).allMatches(value).length;
     return (matchCount != null || matchCount != 0 ? matchCount : 0) /
         value.length;
   }
 
-  /** Normalize the difference for each tuple in
-   * `distances`.
-   *
-   * @param {string} value - Value to normalize.
-   * @param {Array.<Array.<string, number>>} distances
-   *   - List of distances.
-   * @return {Array.<Array.<string, number>>} - Normalized
-   *   distances.
-   */
+  /// Normalize the difference for each tuple in [distances].
+  /// Returns normalized distances.
+
   Map<String, double> _normalize(String value, Map<String, int> distances) {
-    final Map<String, double> normalizedDistances = {};
+    final normalizedDistances = <String, double>{};
     final int min = distances.values.toList()[0];
     final int max = value.length * maxDifference - min;
-    for (MapEntry<String, int> distance in distances.entries) {
+    for (final MapEntry<String, int> distance in distances.entries) {
       normalizedDistances.putIfAbsent(
           distance.key, () => 1 - (distance.value - min) / max);
     }
     return normalizedDistances;
   }
 
-  /** Get the distance between an array of trigram--count
-   * tuples, and multiple trigram dictionaries.
-   *
-   * @param {Array.<Array.<string, number>>} trigrams - An
-   *   array containing trigram--count tuples.
-   * @param {Object.<Object>} languages - multiple
-   *   trigrams to test against.
-   * @param {Array.<string>} only - Allowed languages; if
-   *   non-empty, only included languages are kept.
-   * @param {Array.<string>} ignore - Disallowed languages;
-   *   included languages are ignored.
-   * @return {Array.<Array.<string, number>>} An array
-   *   containing language--distance tuples.
-   */
+  /// Get the distance between an array of [trigrams] and [languages].
+  /// Returns an array containing language--distance pairs.
+
   Map<String, int> _getDistances(
       Map<String, int> trigrams, Map<String, Map<String, int>> languages) {
     final distances = SplayTreeMap<int, String>();
-    for (String language in languages.keys) {
+    for (final String language in languages.keys) {
       distances.putIfAbsent(
           _getDistance(trigrams, languages[language]), () => language);
     }
     return distances.map((key, value) => MapEntry(value, key));
   }
 
-  /** Get the distance between an array of trigram--count
-   * tuples, and a language dictionary.
-   *
-   * @param {Array.<Array.<string, number>>} trigrams - An
-   *   array containing trigram--count tuples.
-   * @param {Object.<number>} model - Object
-   *   containing weighted trigrams.
-   * @return {number} - The distance between the two.
-   */
+  /// Get the distance between an array of [trigrams] and a language [model].
+  /// Returns single distance.
+
   int _getDistance(Map<String, int> trigrams, Map<String, int> model) {
     int distance = 0;
     int difference;
