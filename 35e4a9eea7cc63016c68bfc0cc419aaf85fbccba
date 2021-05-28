@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2bd3001_7bef35d4",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-05-28T17:07:30Z",
+      "side": 1,
+      "message": "почему for in был заменен .forEach?",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
