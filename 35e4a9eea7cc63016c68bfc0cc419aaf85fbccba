@@ -93,6 +93,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd404b0_19ce0566",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-05-31T11:41:55Z",
+      "side": 1,
+      "message": "ты про `languages[languageCode]`?\nт.е. в trigramList не может быть нулл?",
+      "parentUuid": "0a1063e5_339f638c",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
