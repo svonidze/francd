@@ -117,6 +117,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03aee6c7_ca3463f7",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018339
+      },
+      "writtenOn": "2021-05-31T23:29:11Z",
+      "side": 1,
+      "message": "\u003e т.е. в trigramList не может быть нулл?\nне может\n\nЯ исправлял цыклы для мэпов на forEach, который для них удобнее, и ухоит варнинг с индексацией",
+      "parentUuid": "ccd404b0_19ce0566",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
