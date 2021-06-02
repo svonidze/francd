@@ -213,6 +213,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a13c648a_5b733aec",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018339
+      },
+      "writtenOn": "2021-06-02T13:33:43Z",
+      "side": 1,
+      "message": "Значит я неудачно выразился.\nВ любом случае считаю, что для перебора map привильнее использовать forEach, с этим ок?",
+      "parentUuid": "0e3ecd8f_711066f8",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
