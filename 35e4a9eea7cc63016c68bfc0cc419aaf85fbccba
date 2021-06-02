@@ -189,6 +189,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e3ecd8f_711066f8",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-06-02T09:26:46Z",
+      "side": 1,
+      "message": "меня смутила твоя фраза\n\u003e чтобы уйти от оператора \u0027[]\u0027, который может возвращать null\nкоторая по моим тестам не верна, т.к. foreach не решает проблема null как value.\nпроблему решает проверка на null.\nя что-то не понимаю?",
+      "parentUuid": "69c23802_9033fe34",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
