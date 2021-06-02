@@ -237,6 +237,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0a40f24_2f4d4484",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-06-02T20:50:51Z",
+      "side": 1,
+      "message": "\u003e перебора map привильнее использовать forEach\nправильнее, наверное, не самое верное слово, но точно это удобнее в случае доступа к key \u0026 value одновременно.\n\nединственное правило которые мы имеем на это счет не запрещает foreach на map\nhttps://dart-lang.github.io/linter/lints/avoid_function_literals_in_foreach_calls.html",
+      "parentUuid": "a13c648a_5b733aec",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
