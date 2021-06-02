@@ -141,6 +141,30 @@
       },
       "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2959119a_13185014",
+        "filename": "lib/src/franc.dart",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1018167
+      },
+      "writtenOn": "2021-06-02T06:16:48Z",
+      "side": 1,
+      "message": "я не вижу разницу между .forEach и for в данном случае (кроме удобства), нулл будет, и так же будет падать, написал тест на это\n  \n// NoSuchMethodError: The method \u0027forEach\u0027 was called on null.\nfinal map \u003d \u003cString, Map\u003cString, List\u003cString\u003e\u003e\u003e{};\nmap[\"xxx\"] \u003d null;\nmap[\"yyy\"] \u003d \u003cString, List\u003cString\u003e\u003e{\n  \"key\": [\"value\"]\n};\nmap.forEach((key, map2) {\n  print(\"$key: $value\");\n  map2.forEach((key2, value2) {\n    print(\"$key2: $value2\");\n  });\n\nпроблему с нуллом здесь не решена",
+      "parentUuid": "03aee6c7_ca3463f7",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "35e4a9eea7cc63016c68bfc0cc419aaf85fbccba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
